@@ -109,8 +109,10 @@ tabAll.addEventListener('click', () => { setActiveTab(tabAll); showTab('All'); }
 tabInterview.addEventListener('click', () => { setActiveTab(tabInterview); showTab('Interview'); });
 tabRejected.addEventListener('click', () => { setActiveTab(tabRejected); showTab('Rejected'); });
 
-// Initialize
+
+
+// initialize
 updateCounts();
 initJobCards();
 setActiveTab(tabAll);
-showTab('All');
+showTab("All")
