@@ -1,26 +1,23 @@
-// =======================
-// Job Application Tracker JS
-// =======================
 
-// সব job card ধরে নাও
+
+// job section
+
 const jobCards = document.querySelectorAll('.job-card');
 
-// Dashboard element
+// elemant
 const totalCountEl = document.getElementById('total-count');
 const interviewCountEl = document.getElementById('interview-count');
 const rejectedCountEl = document.getElementById('rejected-count');
 
-// Tabs
+// tab
 const tabAll = document.getElementById('tab-all');
 const tabInterview = document.getElementById('tab-interview');
 const tabRejected = document.getElementById('tab-rejected');
 
-// Container
+
 const availableCountEl = document.getElementById('available-count');
 
-// =======================
-// INTERVIEW / REJECTED / DELETE Buttons
-// =======================
+// delet button
 jobCards.forEach(card => {
     const interviewBtn = card.querySelector('.interview-btn');
     const rejectedBtn = card.querySelector('.rejected-btn');
@@ -45,9 +42,7 @@ jobCards.forEach(card => {
     });
 });
 
-// =======================
-// Dashboard update
-// =======================
+// updat
 function updateDashboard() {
     const total = document.querySelectorAll('.job-card').length;
     const interview = document.querySelectorAll('.job-card[data-status="Interview"]').length;
@@ -60,9 +55,7 @@ function updateDashboard() {
     availableCountEl.textContent = total + ' jobs';
 }
 
-// =======================
-// Tab toggle + Active button fix
-// =======================
+
 function getActiveTab() {
     if(tabAll.classList.contains('active')) return 'All';
     if(tabInterview.classList.contains('active')) return 'Interview';
@@ -100,9 +93,7 @@ tabRejected.addEventListener('click', () => {
     showTab('Rejected');
 });
 
-// =======================
-// Active tab style fix
-// =======================
+
 function setActiveTab(tabButton) {
     const tabs = [tabAll, tabInterview, tabRejected];
     tabs.forEach(tab => {
@@ -117,11 +108,12 @@ function setActiveTab(tabButton) {
     });
 }
 
-// =======================
-// Initialize
-// =======================
+
 updateDashboard();
 setActiveTab(tabAll);
 showTab('All');
+
+
+
 
 
