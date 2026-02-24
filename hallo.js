@@ -1,5 +1,5 @@
 
-
+// elemnts
 const totalCountEl = document.getElementById('total-count');
 const interviewCountEl = document.getElementById('interview-count');
 const rejectedCountEl = document.getElementById('rejected-count');
@@ -24,7 +24,7 @@ function updateCounts() {
     availableCountEl.textContent = allJobs.length + ' jobs';
 }
 
-// Show/Hide jobs based on tab
+// show hidden
 function showTab(tab) {
     const allJobs = jobContainer.querySelectorAll('.job-card');
     let hasJobs = false;
@@ -45,7 +45,7 @@ function showTab(tab) {
     }
 }
 
-// Set active tab styling
+//set tab style
 function setActiveTab(tabButton) {
     [tabAll, tabInterview, tabRejected].forEach(tab => {
         if (tab === tabButton) {
@@ -58,7 +58,7 @@ function setActiveTab(tabButton) {
     });
 }
 
-// Get current active tab
+// Tab active
 function getActiveTab() {
     if(tabAll.classList.contains('active')) return 'All';
     if(tabInterview.classList.contains('active')) return 'Interview';
@@ -66,7 +66,7 @@ function getActiveTab() {
     return 'All';
 }
 
-// Initialize job cards
+// job card
 function initJobCards() {
     const jobCards = jobContainer.querySelectorAll('.job-card');
 
@@ -93,7 +93,7 @@ function initJobCards() {
             showTab(getActiveTab());
         }
 
-        // Event listeners
+        // evenlistener
         interviewBtn.addEventListener('click', () => setStatus('Interview'));
         rejectedBtn.addEventListener('click', () => setStatus('Rejected'));
         deleteBtn.addEventListener('click', () => {
@@ -104,7 +104,7 @@ function initJobCards() {
     });
 }
 
-// Tab click events
+// event tab click
 tabAll.addEventListener('click', () => { setActiveTab(tabAll); showTab('All'); });
 tabInterview.addEventListener('click', () => { setActiveTab(tabInterview); showTab('Interview'); });
 tabRejected.addEventListener('click', () => { setActiveTab(tabRejected); showTab('Rejected'); });
